@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useGetAllScreenQuery } from "../../redux/features/Screen/screenApi";
 import Pagination from "../../components/Pagination";
-import { FaSearch } from "react-icons/fa"; // Make sure to install react-icons: npm i react-icons
+import { FaSearch } from "react-icons/fa"; 
 import { Link } from "react-router-dom";
 import Spinner from "@/components/spinner";
 
 const Screen = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState(""); // <-- search state
-  console.log("🚀 ~ Screen ~ searchTerm:", searchTerm);
+  const [searchTerm, setSearchTerm] = useState(""); 
 
   const { data, isLoading, error } = useGetAllScreenQuery({
     page: currentPage.toString(),
