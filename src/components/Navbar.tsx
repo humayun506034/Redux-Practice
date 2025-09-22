@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {
+  logout,
   useCurrentToken,
   useCurrentUser,
 } from "../redux/features/Auth/authSlice";
@@ -15,6 +16,11 @@ export default function Navbar() {
   // console.log(user);
   const { data } = useGetMyProfileInfoQuery(token as string);
   // console.log(data);
+  const dispatch = useAppDispatch();
+  const handleLogout = () => {
+    console.log("Logout...");
+    dispatch(logout());
+  };
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
@@ -38,7 +44,7 @@ export default function Navbar() {
           >
             Screen
           </Link>
-        
+
           {user?.id && (
             <Link
               className="text-gray-700 hover:text-indigo-600 transition"
@@ -56,7 +62,7 @@ export default function Navbar() {
             </Link>
           ) : (
             <button
-              //   onClick={handleLogout}
+              onClick={handleLogout}
               className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-0.5"
             >
               Logout

@@ -3,6 +3,7 @@ import { useGetAllScreenQuery } from "../../redux/features/Screen/screenApi";
 import Pagination from "../../components/Pagination";
 import { FaSearch } from "react-icons/fa"; // Make sure to install react-icons: npm i react-icons
 import { Link } from "react-router-dom";
+import Spinner from "@/components/spinner";
 
 const Screen = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +16,7 @@ const Screen = () => {
   });
 
   if (isLoading)
-    return <p className="text-center text-lg">Loading screens...</p>;
+    return <Spinner/>;
   if (error)
     return <p className="text-center text-red-500">Something went wrong!</p>;
 
