@@ -10,11 +10,11 @@ import { useGetMyProfileInfoQuery } from "../redux/features/Auth/authApi";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const token = useAppSelector(useCurrentToken);
-  console.log(token)
+  // console.log(token)
   const user = useAppSelector(useCurrentUser);
-  console.log(user);
+  // console.log(user);
   const { data } = useGetMyProfileInfoQuery(token as string);
-  console.log(data);
+  // console.log(data);
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
@@ -34,22 +34,11 @@ export default function Navbar() {
           </Link>
           <Link
             className="text-gray-700 hover:text-indigo-600 transition"
-            to="/features"
+            to="/screen"
           >
-            Features
+            Screen
           </Link>
-          <Link
-            className="text-gray-700 hover:text-indigo-600 transition"
-            to="/pricing"
-          >
-            Pricing
-          </Link>
-          <Link
-            className="text-gray-700 hover:text-indigo-600 transition"
-            to="/about"
-          >
-            About
-          </Link>
+        
           {user?.id && (
             <Link
               className="text-gray-700 hover:text-indigo-600 transition"

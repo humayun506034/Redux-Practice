@@ -17,8 +17,8 @@ const authApi = baseApi.injectEndpoints({
 
     getMyProfileInfo : builders.query({
       query: (token: string) => {
-        console.log("🚀 ~ token:", token)
-        console.log(token)
+        // console.log("🚀 ~ token:", token)
+        // console.log(token)
         return {
           url: "/user/me",
           method: "GET",

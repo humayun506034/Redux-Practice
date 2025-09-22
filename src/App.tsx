@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import Navbar from "./components/navbar";
 
 export default function App() {
   return (
     <div>
-      <Navbar/>
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50">
       {/* Hero Section */}
       <header className="container mx-auto flex flex-col md:flex-row items-center justify-between py-20 px-6">

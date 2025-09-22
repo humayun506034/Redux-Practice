@@ -12,7 +12,6 @@ export default function Login() {
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
-  // 👉 তুই এখানে নিজের login function call করে দিবি
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Login clicked:", { email, password });
