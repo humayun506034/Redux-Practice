@@ -40,7 +40,7 @@ const Waveform = ({ audioStream, isRecording }: WaveformProps) => {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
       // Background fill
-      ctx.fillStyle = "#3B82F6"; // blue background
+      ctx.fillStyle = "white"; // blue background
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       // Bars color gradient
@@ -79,13 +79,14 @@ const Waveform = ({ audioStream, isRecording }: WaveformProps) => {
   }, [audioStream, isRecording]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={400}
-      height={100}
-      className="rounded-md border border-border"
-      style={{ backgroundColor: "white" }}
-    />
+   <canvas
+  ref={canvasRef}
+  width={400}
+  height={100}
+  className="w-full h-20"
+  style={{ backgroundColor: "white" }}
+/>
+
   );
 };
 
