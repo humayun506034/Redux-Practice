@@ -3,7 +3,7 @@ import { useGetSingleScreenQuery } from "../../redux/features/Screen/screenApi";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react"; 
-import Spinner from "@/components/spinner";
+import Spinner from "../../components/Spinner";
 
 const ScreenDetails = () => {
   const { slug } = useParams();

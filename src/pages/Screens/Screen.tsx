@@ -3,7 +3,7 @@ import { useGetAllScreenQuery } from "../../redux/features/Screen/screenApi";
 import Pagination from "../../components/Pagination";
 import { FaSearch } from "react-icons/fa"; 
 import { Link } from "react-router-dom";
-import Spinner from "@/components/spinner";
+import Spinner from "../../components/Spinner";
 
 const Screen = () => {
   const [currentPage, setCurrentPage] = useState(1);
