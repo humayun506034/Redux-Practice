@@ -83,15 +83,12 @@
 // };
 
 // export default ScreenDetails;
-
-
-
 import { Link, useParams } from "react-router-dom";
 import { useGetSingleScreenQuery } from "../../redux/features/Screen/screenApi";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowLeft } from "lucide-react"; // Optional icon for clarity
+import { ArrowLeft } from "lucide-react"; 
+import Spinner from "@/components/spinner";
 
 const ScreenDetails = () => {
   const { slug } = useParams();
@@ -100,18 +97,7 @@ const ScreenDetails = () => {
   const screenData = data?.data;
 
   if (isLoading) {
-    return (
-      <div className="max-w-4xl mx-auto py-10 px-4">
-        <Skeleton className="w-full h-64 mb-6 rounded-lg" />
-        <Skeleton className="h-6 w-1/2 mb-2" />
-        <Skeleton className="h-4 w-3/4 mb-4" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Skeleton key={i} className="h-4 w-full" />
-          ))}
-        </div>
-      </div>
-    );
+    return <Spinner/>
   }
 
   if (error || !screenData) {
